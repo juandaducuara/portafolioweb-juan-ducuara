@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/nombre-del-repositorio/static/css/main.f1ddc9ce.css",
+    "main.js": "/nombre-del-repositorio/static/js/main.d3dcd64c.js",
+    "static/js/453.2c8f5cec.chunk.js": "/nombre-del-repositorio/static/js/453.2c8f5cec.chunk.js",
+    "static/media/slick.svg": "/nombre-del-repositorio/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/nombre-del-repositorio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/nombre-del-repositorio/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/nombre-del-repositorio/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/nombre-del-repositorio/index.html",
+    "main.f1ddc9ce.css.map": "/nombre-del-repositorio/static/css/main.f1ddc9ce.css.map",
+    "main.d3dcd64c.js.map": "/nombre-del-repositorio/static/js/main.d3dcd64c.js.map",
+    "453.2c8f5cec.chunk.js.map": "/nombre-del-repositorio/static/js/453.2c8f5cec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1ddc9ce.css",
+    "static/js/main.d3dcd64c.js"
+  ]
+}
