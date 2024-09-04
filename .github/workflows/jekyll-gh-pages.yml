@@ -30,7 +30,12 @@ jobs:
           git config --global user.name "juandaducuara"
 
       - name: Build
-        run: npm run build
+        run: |
+          npm install
+          npm run build
+          ls -l build  # List files to confirm build folder is created
+
+        
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
