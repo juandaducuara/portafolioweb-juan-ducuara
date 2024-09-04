@@ -1,9 +1,8 @@
-name: Deploy React App to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
     branches: ["master"]
-
   workflow_dispatch:
 
 permissions:
@@ -16,24 +15,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # La versión de Node.js que coincida con tu configuración local
-
-      - name: Install dependencies
-        run: npm install
+      - name: Set up Git identity
+        run: |
+          git config --global user.email "jducuara82@gmail.com"
+          git config --global user.name "juandaducuara"
 
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        run: npm run deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa el token de GitHub para autenticar el despliegue
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'build'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
