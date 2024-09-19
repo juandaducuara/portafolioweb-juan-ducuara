@@ -8,7 +8,7 @@ function Hero() {
         <div className="hero-content">
             <h2>Desarollador Junior</h2>
             <p>
-            Java | PHP | C# | JavaScript | SQL server | MySQL | JSON | Node.js | HTML | CSS | React
+            Java | PHP | C# | JavaScript | SQL server | MySQL | JSON | Node.js | HTML | CSS | React | Vue
             </p>
         </div>
         <div className="hero-img">
