@@ -1,57 +1,80 @@
-.experience-container{
-    margin: 4rem 0;
+.estudios-container {
+    padding: 5rem 0;
     position: relative;
 }
-.experience-container h5{
-    font-size: 1.5rem;
+
+.estudios-container h5 {
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 3rem;
+    color: var(--text-primary);
 }
-.arrow-left,
-.arrow-right{
-    width: 2.2rem;
-    height: 2.2rem;
+
+.estudios-container .arrow-left,
+.estudios-container .arrow-right {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6FB1FC;
-    border-radius: 0.65rem;
-    border: 1.5px solid #1E2D5F;
-    background: #1E3A8A;
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
     position: absolute;
     top: 55%;
     z-index: 2;
     cursor: pointer;
+    transition: var(--transition-normal);
 }
 
-.arrow-left span,
-.arrow-right span{
-    font-size: 2rem;
+.estudios-container .arrow-left:hover,
+.estudios-container .arrow-right:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+    color: var(--accent-secondary);
+}
+
+.estudios-container .arrow-left span,
+.estudios-container .arrow-right span {
+    font-size: 1.5rem;
     font-weight: 500;
 }
-.arrow-left{
+
+.estudios-container .arrow-left {
     left: -2rem;
 }
-.arrow-right{
+
+.estudios-container .arrow-right {
     right: -2rem;
 }
-@media (max-width:1025px) {
-    .arrow-left{
-        left: 0rem;
+
+@media (max-width: 1025px) {
+    .estudios-container .arrow-left {
+        left: 0;
     }
-    .arrow-right{
-        right: 0rem;
-    }    
+    .estudios-container .arrow-right {
+        right: 0;
+    }
 }
-@media (max-width:768px) {
-    .experience-container h5{
-        font-size: 1.3rem;
+
+@media (max-width: 768px) {
+    .estudios-container {
+        padding: 3rem 0;
+    }
+    .estudios-container h5 {
+        font-size: 1.5rem;
         margin-bottom: 2rem;
     }
-    .arrow-left{
-        left: -1rem;
+    .estudios-container .arrow-left {
+        left: -0.5rem;
     }
-    .arrow-right{
-        right: -1rem;
+    .estudios-container .arrow-right {
+        right: -0.5rem;
+    }
+    .estudios-container .arrow-left,
+    .estudios-container .arrow-right {
+        width: 36px;
+        height: 36px;
     }
 }

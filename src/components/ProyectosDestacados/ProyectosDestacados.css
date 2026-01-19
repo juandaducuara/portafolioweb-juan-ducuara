@@ -1,17 +1,17 @@
-.experience-container {
+.proyectos-container {
     padding: 5rem 0;
     position: relative;
 }
 
-.experience-container h5 {
+.proyectos-container h5 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 3rem;
     color: var(--text-primary);
 }
 
-.arrow-left,
-.arrow-right {
+.proyectos-container .arrow-left,
+.proyectos-container .arrow-right {
     width: 40px;
     height: 40px;
     display: flex;
@@ -28,57 +28,53 @@
     transition: var(--transition-normal);
 }
 
-.arrow-left:hover,
-.arrow-right:hover {
+.proyectos-container .arrow-left:hover,
+.proyectos-container .arrow-right:hover {
     background: var(--bg-card-hover);
     border-color: var(--accent-primary);
     color: var(--accent-secondary);
 }
 
-.arrow-left span,
-.arrow-right span {
+.proyectos-container .arrow-left span,
+.proyectos-container .arrow-right span {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.arrow-left {
+.proyectos-container .arrow-left {
     left: -2rem;
 }
 
-.arrow-right {
+.proyectos-container .arrow-right {
     right: -2rem;
 }
 
 @media (max-width: 1025px) {
-    .arrow-left {
+    .proyectos-container .arrow-left {
         left: 0;
     }
-    .arrow-right {
+    .proyectos-container .arrow-right {
         right: 0;
     }
 }
 
 @media (max-width: 768px) {
-    .experience-container {
+    .proyectos-container {
         padding: 3rem 0;
     }
-    .experience-container h5 {
+    .proyectos-container h5 {
         font-size: 1.5rem;
         margin-bottom: 2rem;
     }
-    .arrow-left {
+    .proyectos-container .arrow-left {
         left: -0.5rem;
     }
-    .arrow-right {
+    .proyectos-container .arrow-right {
         right: -0.5rem;
     }
-    .arrow-left,
-    .arrow-right {
+    .proyectos-container .arrow-left,
+    .proyectos-container .arrow-right {
         width: 36px;
         height: 36px;
-    }
-    .arrow-left span,
-    .arrow-right span {
-        font-size: 1.3rem;
     }
 }

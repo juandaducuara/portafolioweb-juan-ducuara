@@ -1,0 +1,62 @@
+.proyecto-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 1.8rem;
+    margin: 0 0.75rem;
+    min-height: 140px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-gradient);
+    transform: scaleY(0);
+    transition: var(--transition-normal);
+}
+
+.proyecto-card:hover {
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.proyecto-card:hover::before {
+    transform: scaleY(1);
+}
+
+.proyecto-card h6 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--accent-secondary);
+    line-height: 1.4;
+}
+
+.proyecto-description {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .proyecto-card {
+        margin: 0;
+        padding: 1.5rem;
+        min-height: 120px;
+    }
+    .proyecto-card h6 {
+        font-size: 0.95rem;
+    }
+    .proyecto-description {
+        font-size: 0.85rem;
+    }
+}

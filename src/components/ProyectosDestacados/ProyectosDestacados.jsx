@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
-import './EstudiosRealizados.css'
-import { ESTUDIOS_REALIZADOS } from '../../utils/data'
+import './ProyectosDestacados.css'
+import { PROYECTOS_DESTACADOS } from '../../utils/data'
+import ProyectoCard from './ProyectoCard/ProyectoCard'
 import Slider from 'react-slick'
-import EstudiosCard from './EstudiosCard/EstudiosCard'
 
-const EstudiosRealizados = () => {
+const ProyectosDestacados = () => {
     const sliderRef = useRef();
     const settings={
         dots:false,
@@ -31,25 +31,25 @@ const EstudiosRealizados = () => {
     }
   return (
     <div>
-      <section className="estudios-container" id='seccionEstudiosRealizados'>
-        <h5>Estudios realizados</h5>
+      <section className="proyectos-container" id='seccionProyectos'>
+        <h5>Proyectos Destacados</h5>
 
-        <div className="estudios-content">
+        <div className="proyectos-content">
             <div className="arrow-right" onClick={slideRight}>
                 <span className="material-icons">chevron_right</span>
             </div>
         </div>
 
-        <div className="estudios-content">
+        <div className="proyectos-content">
             <div className="arrow-left" onClick={slideLeft}>
                 <span className="material-icons">chevron_left</span>
             </div>
         </div>
 
-        <div className="estudios-content">
+        <div className="proyectos-content">
             <Slider ref={sliderRef}{...settings}>
-            {ESTUDIOS_REALIZADOS.map((item)=>(
-                <EstudiosCard key={item.title} details={item}/>
+            {PROYECTOS_DESTACADOS.map((item)=>(
+                <ProyectoCard key={item.title} details={item}/>
             ))}
             </Slider>
         </div>
@@ -58,4 +58,4 @@ const EstudiosRealizados = () => {
   )
 }
 
-export default EstudiosRealizados
+export default ProyectosDestacados

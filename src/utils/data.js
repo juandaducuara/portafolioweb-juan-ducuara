@@ -3,106 +3,116 @@ export const SKILLS = [
         title: "Frontend",
         icon: "./assets/images/interfaz.png",
         skills: [
-            { skill: "HTML5", percentage: "70%" },
-            { skill: "CSS3", percentage: "60%" },
-            { skill: "JavaScript", percentage: "70%" },
-            { skill: "React.js", percentage: "40%" }
+            { skill: "React (PrimeReact)", percentage: "70%" },
+            { skill: "Vue (PrimeVue)", percentage: "70%" },
+            { skill: "jQuery", percentage: "75%" },
+            { skill: "HTML5 / CSS3", percentage: "80%" }
         ]
     },
     {
         title: "Backend",
         icon: "./assets/images/backend.png",
         skills: [
-            { skill: "Java", percentage: "70%" },
-            { skill: "C#", percentage: "60%" },
-            { skill: "PHP", percentage: "70%" },
-            { skill: "JavaSript", percentage: "60%" }
+            { skill: "C# (.NET)", percentage: "80%" },
+            { skill: "PHP (Laravel, CodeIgniter)", percentage: "80%" },
+            { skill: "Java (Spring Boot)", percentage: "70%" },
+            { skill: "API RESTful", percentage: "80%" }
         ]
     },
     {
-        title: "Herramientas",
+        title: "Bases de Datos",
         icon: "./assets/images/herramientas.png",
         skills: [
-            { skill: "Visual Studio & VS Code", percentage: "80%" },
-            { skill: "Git & GitHub", percentage: "80%" },
-            { skill: "NetBeans", percentage: "80%" },
-            { skill: "IntelliJ IDEA", percentage: "70%" }
+            { skill: "SQL Server", percentage: "80%" },
+            { skill: "MySQL", percentage: "85%" },
+            { skill: "Oracle", percentage: "70%" },
+            { skill: "Entity Framework Core", percentage: "75%" }
         ]
     },
     {
         title: "Soft Skills",
         icon: "./assets/images/habilidades-blandas.png",
         skills: [
-            { skill: "Resolucion de problemas", percentage: "80%" },
-            { skill: "Colaboración", percentage: "90%" },
-            { skill: "Comunicacion", percentage: "80%" },
-            { skill: "Liderazgo", percentage: "90%" }
+            { skill: "Resolución de problemas", percentage: "90%" },
+            { skill: "Trabajo en equipo", percentage: "90%" },
+            { skill: "Adaptabilidad", percentage: "85%" },
+            { skill: "Calidad del código", percentage: "85%" }
         ]
     },
 ]
 
 export const WORK_EXPERIENCE = [
     {
-        title: "Desarrollador Junior - AOA Colombia",
-        date: "Agosto 2023 - Febrero 2024",
+        title: "NyGSoft SAS - Desarrollador Full Stack",
+        date: "Abril 2023 - Actualmente",
         responsabilities: [
-            "Levantamiento de información y Análisis de requerimientos",
-            "Desarrollo Web PHP con Framework Laravel",
-            "Administración de bases de datos MySQL",
-            "Soporte a aplicativos (Control operativo, Administrativo)"
+            "Diseño y desarrollo de aplicaciones empresariales en C# con .NET, aplicando principios SOLID y Clean Architecture",
+            "Implementación de microservicios y API RESTful con .NET, utilizando JWT para seguridad",
+            "Desarrollo de interfaces con React (PrimeReact), Vue (PrimeVue) y jQuery para aplicaciones SPA",
+            "Gestión de bases de datos con SQL Server, Oracle y MySQL usando Entity Framework Core",
+            "Desarrollo de APIs RESTful en Laravel con arquitectura MVC y pruebas funcionales",
+            "Participación en análisis funcional, diseño técnico y documentación"
         ]
     },
     {
-        title: "NyGSoft - Desarrollador JR Full Stack",
-        date: "Mayo 2024  - Actualmente",
+        title: "AOA Colombia - Practicante",
+        date: "Agosto 2023 - Marzo 2024",
         responsabilities: [
-            "Desarrollo frontend Vue, Bootstrap y jQuery",
-            "Desarrollo backend PHP con framework como CodeIgniter y Laravel y C# con .NET",
-            "Administración de bases de datos MySQL, SQL y Oracle"
-        ]
-    },
-    {
-        title: "SICTAX.NET S.A.S - Desarrollador JR Full Stack",
-        date: "Junio 2024 - Actualmente",
-        responsabilities: [
-            "Desarrollo frontend Bootstrap",
-            "Desarrollo backend PHP con Framework CodeIgniter",
-            "Administración de bases de datos MySQL",
+            "Soporte en sitio a equipos de cómputo",
+            "Atención al usuario final (vía teléfono, chat o correo)",
+            "Registro y seguimiento de tickets",
+            "Resolución de incidentes básicos",
+            "Instalación y configuración de aplicaciones"
         ]
     },
 ]
+
+export const PROYECTOS_DESTACADOS = [
+    {
+        title: "Sistema de pago de beneficiarios - Defensoría del Pueblo",
+        description: "Análisis funcional y diseño de flujos para automatizar pagos y trazabilidad de beneficiarios"
+    },
+    {
+        title: "Sistema de gestión de casos para inmigrantes",
+        description: "Definición de requerimientos para atención y seguimiento integral de usuarios"
+    },
+    {
+        title: "Sistema de remisiones y facturación industrial (integrado con NetSuite)",
+        description: "Modelado de procesos y validación de reglas de negocio"
+    },
+    {
+        title: "Sistema de gestión documental",
+        description: "Diseño de estructura de metadatos, flujos de aprobación y políticas de almacenamiento"
+    },
+    {
+        title: "Sistema contable",
+        description: "Análisis funcional para automatización de registros contables y conciliación de movimientos financieros"
+    },
+]
+
 export const ESTUDIOS_REALIZADOS = [
     {
-        title: "Tecnólogo Análisis y Desarrollo de sistemas de informacion SENA",
-        date: "Enero 2022 - Febrero 2024",
+        title: "Tecnólogo en Análisis y Desarrollo de Sistemas de Información (ADSI)",
+        date: "SENA - Dic 2024",
         responsabilities: [
-            "Levantamiento de información y Análisis de requerimientos",
-            "Desarrollo Web PHP , JAVA , Node.js y C# (.NET)",
+            "Desarrollo Web con PHP, Java, Node.js y C# (.NET)",
             "Administración de bases de datos MySQL",
-            "Pruebas unitarias Junit",
-            "Calidad de software",
-            "Diseño Web e ingles"
+            "Análisis de requerimientos y diseño de soluciones",
+            "Pruebas unitarias y calidad de software"
         ]
     },
     {
-        title: "Java y Spring Boot G6 - Oracle Next Education - alura(2024)",
-        date: "Febrero 2024",
+        title: "Java y Spring Boot G6 - Oracle Next Education",
+        date: "Alura LATAM - Dic 2024",
         responsabilities: [
-            "Spring Boot 3: desarrollar una API Rest en Java - alura",
+            "Spring Boot 3: desarrollar una API Rest en Java",
             "Spring Boot: persistencia de datos y consultas con Spring Data JPA",
-            "Spring Boot 3: documentar, probar y preparar una API para su implementación",
-            "Java: creando tu primera API y conectándola al Front End ",
-            "Git y GitHub: repositorio, commit y versiones"
+            "Spring Boot 3: documentar, probar y preparar una API para su implementación"
         ]
     },
     {
-        title: "Curso - Fundamentos profesionales del desarrollo de software - Microsoft y LinkedIn ",
-        date: "Marzo 2023",
-        responsabilities: [
-            "Fundamentos esenciales de la programación",
-            "Introducción a las habilidades profesionales en el desarrollo de software",
-            "Fundamentos de la programación"
-        ]
+        title: "Bachillerato Académico",
+        date: "Alfonso López Michelsen (I.E.D) - Dic 2019",
+        responsabilities: []
     },
-
 ]

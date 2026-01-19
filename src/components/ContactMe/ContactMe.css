@@ -1,24 +1,31 @@
-.contact-container{
-    margin: 4rem 0;
+.contact-container {
+    padding: 5rem 0;
     position: relative;
 }
 
-.contact-container h5{
-    font-size: 1.5rem;
+.contact-container h5 {
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 3rem;
+    color: var(--text-primary);
 }
 
-.contact-content{
+.contact-content {
     display: flex;
     gap: 3rem;
+    align-items: flex-start;
 }
-@media (max-width:768px) {
-    .contact-content{        
-        flex-direction: column-reverse;
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 3rem 0;
     }
-    .contact-container h5{
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+    .contact-content {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    .contact-container h5 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
 }

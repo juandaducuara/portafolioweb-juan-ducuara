@@ -1,62 +1,91 @@
-.skill-card{
-    border-radius: 0.65rem;
-    border: 1.5px solid #1E3A8A;
-    padding: 2.5rem;
+.skill-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
     text-align: center;
-    background: rgba(22,17, 47, 0.398);
-    backdrop-filter: blur(1rem);
     position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transition: var(--transition-normal);
 }
 
 .skill-card:hover,
-.skill-card.active{
-    background: linear-gradient(180deg,#6FB1FC 0%,#1E3A8A 100%);
+.skill-card.active {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
 }
 
-.skill-card span{
-    font-size: 1.3rem;
+.skill-card:hover::before,
+.skill-card.active::before {
+    transform: scaleX(1);
+}
+
+.skill-card span {
+    font-size: 1rem;
     font-weight: 500;
+    color: var(--text-primary);
 }
 
-.skill-icon{
-    width: 4rem;
-    height: 4rem;
+.skill-icon {
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#1E2D5F;
-    border-radius: 0.65rem;
-    border: 1.5px solid #1E2D5F;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
     position: absolute;
-    top: -1rem;
-    left: -1rem;
+    top: -12px;
+    left: -12px;
+    transition: var(--transition-normal);
 }
 
-.skill-icon img{
-    width: 2.4rem;
+.skill-card:hover .skill-icon,
+.skill-card.active .skill-icon {
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.skill-icon img {
+    width: 26px;
     height: auto;
     object-fit: contain;
 }
 
-@media (max-width:1025) {
-    .skill-card{
-        padding: 2rem;
+@media (max-width: 1025px) {
+    .skill-card {
+        padding: 1.5rem 1rem;
     }
-    .skill-card span{
-        font-size: 1rem;
+    .skill-card span {
+        font-size: 0.9rem;
     }
-    .skill-icon{
-        width: 3rem;
-        height: 3rem;
+    .skill-icon {
+        width: 42px;
+        height: 42px;
     }
-    .skill-icon img{
-        width: 1.8rem;
+    .skill-icon img {
+        width: 22px;
     }
 }
-@media (max-width:768px) {
-    .skill-card span{
-        font-size: 0.9rem;        
+
+@media (max-width: 768px) {
+    .skill-card span {
+        font-size: 0.85rem;
     }
 }

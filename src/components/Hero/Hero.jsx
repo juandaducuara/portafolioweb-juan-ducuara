@@ -6,9 +6,9 @@ function Hero() {
     <div>
       <section className="hero-container" id="seccionInicio">
         <div className="hero-content">
-            <h2>Desarollador Junior</h2>
+            <h2>Desarrollador Full Stack</h2>
             <p>
-            Java | PHP | C# | JavaScript | SQL server | MySQL | JSON | HTML | CSS | React | Vue
+            C# (.NET) | PHP (Laravel, CodeIgniter) | Java (Spring Boot) | React | Vue | SQL Server | MySQL | Oracle
             </p>
         </div>
         <div className="hero-img">

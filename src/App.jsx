@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
 import EstudiosRealizados from './components/EstudiosRealizados/EstudiosRealizados'
 import WorkExperience from './components/WorkExperiece/WorkExperience'
+import ProyectosDestacados from './components/ProyectosDestacados/ProyectosDestacados'
 import ContactMe from './components/ContactMe/ContactMe'
 import Footer from './components/Footer/Footer'
 const App = () =>{
@@ -16,6 +17,7 @@ const App = () =>{
       <Skills/>
       <EstudiosRealizados/>
       <WorkExperience/>
+      <ProyectosDestacados/>
       <ContactMe/>      
     </div>
     <Footer/>

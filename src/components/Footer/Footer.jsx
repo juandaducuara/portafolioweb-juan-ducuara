@@ -3,7 +3,9 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className="footer">®2024 Juan Ducuara</div>
+    <div className="footer">
+      <span>Juan Ducuara</span> - Desarrollador Full Stack
+    </div>
   )
 }
 

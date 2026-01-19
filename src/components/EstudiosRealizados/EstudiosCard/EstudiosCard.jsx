@@ -3,15 +3,16 @@ import './EstudiosCard.css'
 
 const EstudiosCard = ({details}) => {
   return (
-    
-    <div className="work-experience-card">
+    <div className="estudios-card">
         <h6>{details.title}</h6>
-        <div className="work-duration">{details.date}</div>
-        <ul>
-            {details.responsabilities.map((item)=>(
-                <li key={item}>{item}</li>
-            ))}
-        </ul>
+        <div className="estudios-duration">{details.date}</div>
+        {details.responsabilities && details.responsabilities.length > 0 && (
+            <ul>
+                {details.responsabilities.map((item)=>(
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+        )}
     </div>
   )
 }
