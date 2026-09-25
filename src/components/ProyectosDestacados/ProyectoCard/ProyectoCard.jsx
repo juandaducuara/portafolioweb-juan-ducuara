@@ -1,14 +1,20 @@
 import React from 'react'
 import './ProyectoCard.css'
 
-const ProyectoCard = ({details}) => {
+const ProyectoCard = ({ project, featuredLabel }) => {
   return (
-    <article className="proyecto-card">
-        <h3>{details.title}</h3>
-        <p className="proyecto-description">{details.description}</p>
-        <ul>
-            {details.items.map((item)=>(
-                <li key={item}>{item}</li>
+    <article className={`proyecto-card${project.featured ? ' featured' : ''}`}>
+        {project.featured && (
+          <span className="proyecto-badge">
+            <span className="material-icons" aria-hidden="true">star</span>
+            {featuredLabel}
+          </span>
+        )}
+        <h4>{project.title}</h4>
+        <p className="proyecto-description">{project.description}</p>
+        <ul className="chip-list">
+            {project.stack.map((tech) => (
+                <li key={tech} className={`chip${project.featured ? ' core' : ''}`}>{tech}</li>
             ))}
         </ul>
     </article>
