@@ -1,26 +1,46 @@
 import React from 'react'
 import './ContactMe.css'
 import ContactInfoCard from './ContactInfoCard/ContactInfoCard'
-import ContactForm from './ContactForm/ContactForm'
+import { useLanguage } from '../../context/LanguageContext'
+import { PROFILE } from '../../utils/data'
 
 const ContactMe = () => {
+  const { t } = useLanguage();
+
   return (
-    <section className="contact-container" id="seccionContacto">
-        <h5>Contacto</h5>
+    <section className="section contact-container" id="seccionContacto">
+        <h2 className="section-heading">{t.contact.title}</h2>
+        <p className="contact-subtitle">{t.contact.subtitle}</p>
         <div className="contact-content">
-            <div style={{flex:1}}>
-               <ContactInfoCard
-                    iconUrl="./assets/images/gmail.png"
-                    text="jducuara82@gmail.com"
-               /> 
-               <ContactInfoCard
-                    iconUrl="./assets/images/github.png"
-                    text="https://github.com/juandaducuara"
-               />
-            </div>
-            <div style={{flex:1}}>
-                <ContactForm/> 
-            </div>
+            <ContactInfoCard
+                href={`mailto:${PROFILE.email}`}
+                iconUrl="./assets/images/gmail.png"
+                label={t.contact.email}
+                value={PROFILE.email}
+            />
+            <ContactInfoCard
+                href={PROFILE.linkedin}
+                iconUrl="./assets/images/linkedin.png"
+                label={t.contact.linkedin}
+                value="in/juandaducuara"
+                external
+                lightIcon
+            />
+            <ContactInfoCard
+                href={PROFILE.github}
+                iconUrl="./assets/images/github.png"
+                label={t.contact.github}
+                value="juandaducuara"
+                external
+                lightIcon
+            />
+            <ContactInfoCard
+                href={PROFILE.cv}
+                materialIcon="download"
+                label={t.contact.cv}
+                value={t.contact.cvValue}
+                download
+            />
         </div>
     </section>
   )

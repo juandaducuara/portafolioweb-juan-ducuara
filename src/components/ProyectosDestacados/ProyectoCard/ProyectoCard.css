@@ -3,60 +3,62 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     padding: 1.8rem;
-    margin: 0 0.75rem;
-    min-height: 140px;
-    transition: var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-}
-
-.proyecto-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-gradient);
-    transform: scaleY(0);
     transition: var(--transition-normal);
 }
 
 .proyecto-card:hover {
     border-color: var(--border-light);
     box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
 }
 
-.proyecto-card:hover::before {
-    transform: scaleY(1);
-}
-
-.proyecto-card h6 {
-    font-size: 1.05rem;
+.proyecto-card h3 {
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
-    color: var(--accent-secondary);
-    line-height: 1.4;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
 }
 
 .proyecto-description {
     font-size: 0.9rem;
-    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.proyecto-card ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.proyecto-card li {
+    list-style: none;
+    position: relative;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.5;
+}
+
+.proyecto-card li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -1.2rem;
+    top: 0.5rem;
 }
 
 @media (max-width: 768px) {
     .proyecto-card {
-        margin: 0;
-        padding: 1.5rem;
-        min-height: 120px;
+        padding: 1.3rem;
     }
-    .proyecto-card h6 {
-        font-size: 0.95rem;
+    .proyecto-card ul {
+        grid-template-columns: 1fr;
     }
-    .proyecto-description {
+    .proyecto-card li {
         font-size: 0.85rem;
     }
 }

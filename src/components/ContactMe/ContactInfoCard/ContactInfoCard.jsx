@@ -1,14 +1,19 @@
 import React from 'react'
 import './ContactInfoCard.css'
 
-const ContactInfoCard = ({iconUrl,text}) => {
+const ContactInfoCard = ({href,iconUrl,materialIcon,label,value,external,download,lightIcon}) => {
+  const linkProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <div className="contact-details-card">
+    <a className="contact-details-card" href={href} download={download} {...linkProps}>
         <div className="icon">
-            <img src={iconUrl} alt={text} />
+            {materialIcon
+              ? <span className="material-icons" aria-hidden="true">{materialIcon}</span>
+              : <img src={iconUrl} alt="" className={lightIcon ? "icon-light" : undefined} />}
         </div>
-        <p>{text}</p>
-    </div>
+        <span className="contact-label">{label}</span>
+        <span className="contact-value">{value}</span>
+    </a>
   )
 }
 

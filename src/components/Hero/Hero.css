@@ -43,23 +43,81 @@
     animation: fadeInUp 0.8s ease forwards;
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #ffffff 0%, #a0a0b0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    margin-bottom: 1.5rem;
+}
+
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 400;
     color: var(--text-secondary);
     line-height: 1.8;
-    letter-spacing: 0.5px;
+}
+
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+
+.hero-facts li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.hero-facts .material-icons {
+    font-size: 1.1rem;
+    color: var(--accent-secondary);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.hero-social {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+}
+
+.hero-social:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.hero-social img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
 .hero-img {
@@ -119,7 +177,7 @@
 }
 
 @media (max-width: 1025px) {
-    .hero-content h2 {
+    .hero-content h1 {
         font-size: 2.8rem;
     }
     .hero-content p {
@@ -148,8 +206,15 @@
         max-width: 100%;
         margin-bottom: 3rem;
     }
-    .hero-content h2 {
+    .hero-content h1 {
         font-size: 2.2rem;
+    }
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    .hero-facts,
+    .hero-actions {
+        justify-content: center;
     }
     .hero-content p {
         font-size: 0.95rem;
@@ -164,7 +229,7 @@
 }
 
 @media (max-width: 480px) {
-    .hero-content h2 {
+    .hero-content h1 {
         font-size: 1.8rem;
     }
     .hero-content p {

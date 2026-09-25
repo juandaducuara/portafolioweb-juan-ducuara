@@ -12,14 +12,14 @@ const App = () =>{
   return(
     <>
     <Navbar/>
-    <div className="container">    
+    <main className="container">
       <Hero/>
-      <Skills/>
-      <EstudiosRealizados/>
       <WorkExperience/>
       <ProyectosDestacados/>
-      <ContactMe/>      
-    </div>
+      <Skills/>
+      <EstudiosRealizados/>
+      <ContactMe/>
+    </main>
     <Footer/>
     </>
   )

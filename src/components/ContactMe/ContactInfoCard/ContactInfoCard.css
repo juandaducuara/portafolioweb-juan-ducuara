@@ -6,14 +6,16 @@
     background: var(--bg-card);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
-    padding: 1.5rem 2rem;
-    margin-bottom: 1.2rem;
+    padding: 1.5rem 1rem;
+    text-decoration: none;
+    height: 100%;
     transition: var(--transition-normal);
 }
 
 .contact-details-card:hover {
-    border-color: var(--border-light);
+    border-color: var(--accent-primary);
     box-shadow: var(--shadow-sm);
+    transform: translateY(-3px);
 }
 
 .contact-details-card .icon {
@@ -40,19 +42,28 @@
     object-fit: contain;
 }
 
-.contact-details-card p {
+.icon .material-icons {
+    font-size: 24px;
+    color: var(--accent-secondary);
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.contact-value {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     text-align: center;
+    word-break: break-word;
 }
 
-.contact-details-card a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition-normal);
-}
-
-.contact-details-card a:hover {
+.contact-details-card:hover .contact-value {
     color: var(--accent-secondary);
 }

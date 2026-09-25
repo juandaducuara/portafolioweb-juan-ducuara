@@ -1,11 +1,15 @@
 import React from 'react'
 import './Footer.css'
+import { useLanguage } from '../../context/LanguageContext'
+import { PROFILE } from '../../utils/data'
 
 const Footer = () => {
+  const { t } = useLanguage()
+
   return (
-    <div className="footer">
-      <span>Juan Ducuara</span> - Desarrollador Full Stack
-    </div>
+    <footer className="footer">
+      © {new Date().getFullYear()} <span>{PROFILE.name}</span> - {t.footer}
+    </footer>
   )
 }
 

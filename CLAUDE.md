@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Juan Ducuara, built with React 18 and Create React App. The site showcases skills, work experience, education, and contact information. Deployed to GitHub Pages.
+Personal portfolio website for Juan Ducuara, built with React 18 and Create React App. The site showcases work experience, a featured case study, skills, education, and contact links, in Spanish and English. Deployed to GitHub Pages.
 
 ## Commands
 
@@ -13,25 +13,30 @@ Personal portfolio website for Juan Ducuara, built with React 18 and Create Reac
 - `npm test` - Run tests (Jest with React Testing Library)
 - `npm run deploy` - Build and deploy to GitHub Pages (uses gh-pages)
 
+Pushing to `master` also triggers `.github/workflows/deploy.yml`, which builds and publishes to GitHub Pages. It runs with `CI=true`, so any ESLint warning fails the build — verify with `CI=true npm run build` before pushing.
+
 ## Architecture
 
 ### Component Structure
 
-The app follows a section-based layout in `src/App.jsx`:
-- **Navbar** - Navigation with mobile responsive menu (`MobileNav`)
-- **Hero** - Introduction section with profile image and tech icons
-- **Skills** - Interactive skill cards with selectable categories
-- **EstudiosRealizados** - Education/studies section with timeline cards
-- **WorkExperience** - Work history with experience cards
-- **ContactMe** - Contact form and info cards
+The app follows a section-based layout in `src/App.jsx`, ordered for recruiters:
+- **Navbar** - Navigation, ES/EN toggle and mobile menu (`MobileNav`)
+- **Hero** - Name, role, summary, quick facts, CV download and social links
+- **WorkExperience** - Vertical timeline of `ExperienceCard`s (highlights + expandable responsibilities + stack chips)
+- **ProyectosDestacados** - `CaseStudy` (featured confidential project) + `ProyectoCard` (grouped smaller projects)
+- **Skills** - Grid of `SkillCard` categories with chips; `core: true` marks daily production use
+- **EstudiosRealizados** - Education cards grid
+- **ContactMe** - Direct link cards (mailto, LinkedIn, GitHub, CV). There is no contact form on purpose (GitHub Pages can't process POSTs).
 - **Footer** - Page footer
 
-### Data Management
+### Data Management and i18n
 
-All content data (skills, work experience, education) is centralized in `src/utils/data.js` as exported constants:
-- `SKILLS` - Array of skill categories with nested skill items and percentages
-- `WORK_EXPERIENCE` - Array of job positions with responsibilities
-- `ESTUDIOS_REALIZADOS` - Array of education entries
+All content lives in `src/utils/data.js`:
+- `PROFILE` - Language-neutral data (name, email, links, CV path, photo)
+- `HERO_TECH_ICONS` - Icons shown around the hero photo
+- `CONTENT.es` / `CONTENT.en` - All translatable content and UI strings. Both must keep the exact same shape; a test in `src/App.test.js` enforces it.
+
+`src/context/LanguageContext.jsx` provides `useLanguage()` → `{ lang, toggleLang, t }`, where `t` is `CONTENT[lang]`. The choice is persisted in `localStorage` and sets `<html lang>`.
 
 ### Component Pattern
 
@@ -45,12 +50,13 @@ src/components/[SectionName]/
     └── [SubComponent].css
 ```
 
+Shared styles (`.section`, `.section-heading`, `.chip`, `.btn-*`, `.icon-light`) are in `src/App.css`; design tokens (CSS variables) in `src/index.css`.
+
 ### Static Assets
 
-Images and icons are stored in `public/assets/images/` and referenced with relative paths from the public root (e.g., `./assets/images/java.png`).
+Images and icons are stored in `public/assets/images/` (tech SVGs in `tech/`) and referenced with relative paths from the public root (e.g., `./assets/images/juan-ducuara.jpg`). The downloadable CV is `public/cv-juan-ducuara.pdf` — it must not contain ID number, address, phone or age.
 
 ## Key Libraries
 
-- **react-bootstrap** - UI components
-- **react-slick** + **slick-carousel** - Carousel/slider functionality
 - **gh-pages** - GitHub Pages deployment
+- **Material Icons** (Google Fonts, loaded in `public/index.html`) - UI icons

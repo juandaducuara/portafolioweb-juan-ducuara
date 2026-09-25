@@ -1,84 +1,51 @@
-.experience-container {
-    padding: 5rem 0;
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     position: relative;
 }
 
-.experience-container h5 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-}
-
-.arrow-left,
-.arrow-right {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-primary);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-    background: var(--bg-card);
+.timeline::before {
+    content: "";
     position: absolute;
-    top: 55%;
-    z-index: 2;
-    cursor: pointer;
-    transition: var(--transition-normal);
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 7px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-primary), var(--border-color));
 }
 
-.arrow-left:hover,
-.arrow-right:hover {
-    background: var(--bg-card-hover);
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 1.9rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--border-light);
+}
+
+.timeline-dot.current {
     border-color: var(--accent-primary);
-    color: var(--accent-secondary);
-}
-
-.arrow-left span,
-.arrow-right span {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.arrow-left {
-    left: -2rem;
-}
-
-.arrow-right {
-    right: -2rem;
-}
-
-@media (max-width: 1025px) {
-    .arrow-left {
-        left: 0;
-    }
-    .arrow-right {
-        right: 0;
-    }
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
 @media (max-width: 768px) {
-    .experience-container {
-        padding: 3rem 0;
+    .timeline-item {
+        padding-left: 1.8rem;
     }
-    .experience-container h5 {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    .arrow-left {
-        left: -0.5rem;
-    }
-    .arrow-right {
-        right: -0.5rem;
-    }
-    .arrow-left,
-    .arrow-right {
-        width: 36px;
-        height: 36px;
-    }
-    .arrow-left span,
-    .arrow-right span {
-        font-size: 1.3rem;
+    .timeline-dot {
+        top: 1.6rem;
     }
 }

@@ -1,34 +1,31 @@
 import React from "react";
 import "./MobileNav.css";
+import { useLanguage } from "../../../context/LanguageContext";
+import { PROFILE } from "../../../utils/data";
 
 const MobileNav = ({ isOpen, toggleMenu }) => {
+  const { t } = useLanguage();
+
   return (
-    <div 
+    <div
       className={`mobile-menu ${isOpen ? "active" : ""}`}
-      onClick={toggleMenu}    
+      onClick={toggleMenu}
     >
       <div className="mobile-menu-container">
-        <img src="./assets/images/Juan Ducuara.png" alt="Logo" className="logo" />
+        <img src="./assets/images/Juan Ducuara.png" alt={PROFILE.name} className="logo" />
         <ul>
+          {t.nav.map((item) => (
+            <li key={item.href}>
+              <a className="menu-item" href={item.href}>{item.label}</a>
+            </li>
+          ))}
           <li>
-            <a className="menu-item" href="#seccionInicio">Inicio</a>
-          </li>
-          <li>
-            <a className="menu-item" href="#seccionHabilidades">Habilidades</a>
-          </li>
-          <li>
-            <a className="menu-item" href="#seccionExperienciaLaboral">Experiencia laboral</a>
-          </li>
-          <li>
-            <a className="menu-item" href="#seccionContacto">Contacto</a>
-          </li>
-          <li>
-            <button className="contact-btn" onClick={() => { /* Lógica para el botón */ }}>
-              Contactame
-            </button>           
+            <a className="contact-btn" href="#seccionContacto">
+              {t.ui.contactBtn}
+            </a>
           </li>
         </ul>
-      </div>    
+      </div>
     </div>
   );
 }

@@ -9,3 +9,107 @@
         padding: 0 1.5rem;
     }
 }
+
+/* Estilos compartidos entre secciones */
+.section {
+    padding: 5rem 0;
+    position: relative;
+    scroll-margin-top: 80px;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    line-height: 1.4;
+}
+
+.chip.core {
+    color: var(--accent-secondary);
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.btn .material-icons {
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    color: var(--text-primary);
+    background: var(--accent-gradient);
+    border: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Íconos negros (LinkedIn, GitHub) que se pierden sobre el fondo oscuro */
+.icon-light {
+    filter: invert(1);
+}

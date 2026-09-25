@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Juan Ducuara - Portafolio Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portafolio profesional desarrollado con React que muestra mi experiencia como Desarrollador Full Stack.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+[Ver Portafolio en Vivo](https://juandaducuara.github.io/portafolioweb-juan-ducuara)
 
-### `npm start`
+## Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 18** - Biblioteca de UI
+- **React Bootstrap** - Componentes de interfaz
+- **React Slick** - Carruseles interactivos
+- **CSS3** - Estilos con variables CSS y animaciones
+- **GitHub Pages** - Hosting
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalacion
 
-### `npm test`
+```bash
+# Clonar repositorio
+git clone https://github.com/juandaducuara/portafolioweb-juan-ducuara.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Entrar al directorio
+cd portafolioweb-juan-ducuara
 
-### `npm run build`
+# Instalar dependencias
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Iniciar servidor de desarrollo
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Comando | Descripcion |
+|---------|-------------|
+| `npm start` | Inicia el servidor de desarrollo en http://localhost:3000 |
+| `npm run build` | Genera build de produccion |
+| `npm test` | Ejecuta las pruebas |
+| `npm run deploy` | Despliega a GitHub Pages |
 
-### `npm run eject`
+## Estructura del Proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+├── components/
+│   ├── Navbar/              # Navegacion principal y movil
+│   ├── Hero/                # Seccion de presentacion
+│   ├── Skills/              # Habilidades tecnicas
+│   ├── WorkExperience/      # Experiencia laboral
+│   ├── EstudiosRealizados/  # Formacion academica
+│   ├── ProyectosDestacados/ # Proyectos realizados
+│   ├── ContactMe/           # Formulario de contacto
+│   └── Footer/              # Pie de pagina
+├── utils/
+│   └── data.js              # Datos del portafolio
+├── App.jsx                  # Componente principal
+└── index.css                # Estilos globales
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Secciones
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Hero** - Presentacion con foto y tecnologias principales
+- **Skills** - Habilidades en Frontend, Backend, Bases de Datos y Soft Skills
+- **Experiencia** - Historial laboral con responsabilidades
+- **Estudios** - Formacion academica y certificaciones
+- **Proyectos** - Proyectos destacados realizados
+- **Contacto** - Formulario e informacion de contacto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contacto
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Email:** jducuara82@gmail.com
+- **LinkedIn:** [juandaducuara](https://www.linkedin.com/in/juandaducuara)
+- **GitHub:** [juandaducuara](https://github.com/juandaducuara)

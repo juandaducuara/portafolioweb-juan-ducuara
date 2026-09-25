@@ -3,7 +3,6 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     padding: 1.8rem;
-    margin: 0 0.75rem;
     transition: var(--transition-normal);
     height: 100%;
 }
@@ -13,7 +12,7 @@
     box-shadow: var(--shadow-md);
 }
 
-.estudios-card h6 {
+.estudios-card h3 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
@@ -62,7 +61,7 @@
         margin: 0;
         padding: 1.5rem;
     }
-    .estudios-card h6 {
+    .estudios-card h3 {
         font-size: 1rem;
     }
     .estudios-card ul li {

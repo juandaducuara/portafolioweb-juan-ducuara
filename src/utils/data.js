@@ -1,118 +1,534 @@
-export const SKILLS = [
-    {
-        title: "Frontend",
-        icon: "./assets/images/interfaz.png",
-        skills: [
-            { skill: "React (PrimeReact)", percentage: "70%" },
-            { skill: "Vue (PrimeVue)", percentage: "70%" },
-            { skill: "jQuery", percentage: "75%" },
-            { skill: "HTML5 / CSS3", percentage: "80%" }
-        ]
-    },
-    {
-        title: "Backend",
-        icon: "./assets/images/backend.png",
-        skills: [
-            { skill: "C# (.NET)", percentage: "80%" },
-            { skill: "PHP (Laravel, CodeIgniter)", percentage: "80%" },
-            { skill: "Java (Spring Boot)", percentage: "70%" },
-            { skill: "API RESTful", percentage: "80%" }
-        ]
-    },
-    {
-        title: "Bases de Datos",
-        icon: "./assets/images/herramientas.png",
-        skills: [
-            { skill: "SQL Server", percentage: "80%" },
-            { skill: "MySQL", percentage: "85%" },
-            { skill: "Oracle", percentage: "70%" },
-            { skill: "Entity Framework Core", percentage: "75%" }
-        ]
-    },
-    {
-        title: "Soft Skills",
-        icon: "./assets/images/habilidades-blandas.png",
-        skills: [
-            { skill: "Resolución de problemas", percentage: "90%" },
-            { skill: "Trabajo en equipo", percentage: "90%" },
-            { skill: "Adaptabilidad", percentage: "85%" },
-            { skill: "Calidad del código", percentage: "85%" }
-        ]
-    },
+// Datos que no cambian con el idioma
+export const PROFILE = {
+    name: "Juan David Ducuara",
+    email: "jducuara82@gmail.com",
+    linkedin: "https://www.linkedin.com/in/juandaducuara",
+    github: "https://github.com/juandaducuara",
+    cv: "./cv-juan-ducuara.pdf",
+    photo: "./assets/images/juan-ducuara.jpg",
+}
+
+export const HERO_TECH_ICONS = [
+    { name: "C#", icon: "./assets/images/tech/csharp.svg" },
+    { name: ".NET", icon: "./assets/images/tech/dotnetcore.svg" },
+    { name: "Angular", icon: "./assets/images/tech/angular.svg" },
+    { name: "TypeScript", icon: "./assets/images/tech/typescript.svg" },
 ]
 
-export const WORK_EXPERIENCE = [
-    {
-        title: "NyGSoft SAS - Desarrollador Full Stack",
-        date: "Abril 2023 - Actualmente",
-        responsabilities: [
-            "Diseño y desarrollo de aplicaciones empresariales en C# con .NET, aplicando principios SOLID y Clean Architecture",
-            "Implementación de microservicios y API RESTful con .NET, utilizando JWT para seguridad",
-            "Desarrollo de interfaces con React (PrimeReact), Vue (PrimeVue) y jQuery para aplicaciones SPA",
-            "Gestión de bases de datos con SQL Server, Oracle y MySQL usando Entity Framework Core",
-            "Desarrollo de APIs RESTful en Laravel con arquitectura MVC y pruebas funcionales",
-            "Participación en análisis funcional, diseño técnico y documentación"
-        ]
-    },
-    {
-        title: "AOA Colombia - Practicante",
-        date: "Agosto 2023 - Marzo 2024",
-        responsabilities: [
-            "Soporte en sitio a equipos de cómputo",
-            "Atención al usuario final (vía teléfono, chat o correo)",
-            "Registro y seguimiento de tickets",
-            "Resolución de incidentes básicos",
-            "Instalación y configuración de aplicaciones"
-        ]
-    },
-]
+const NAV_IDS = {
+    inicio: "#seccionInicio",
+    experiencia: "#seccionExperienciaLaboral",
+    proyectos: "#seccionProyectos",
+    habilidades: "#seccionHabilidades",
+    estudios: "#seccionEstudiosRealizados",
+    contacto: "#seccionContacto",
+}
 
-export const PROYECTOS_DESTACADOS = [
-    {
-        title: "Sistema de pago de beneficiarios - Defensoría del Pueblo",
-        description: "Análisis funcional y diseño de flujos para automatizar pagos y trazabilidad de beneficiarios"
+// Contenido por idioma. Ambas claves deben tener la misma estructura.
+export const CONTENT = {
+    es: {
+        nav: [
+            { href: NAV_IDS.inicio, label: "Inicio" },
+            { href: NAV_IDS.experiencia, label: "Experiencia" },
+            { href: NAV_IDS.proyectos, label: "Proyectos" },
+            { href: NAV_IDS.habilidades, label: "Habilidades" },
+            { href: NAV_IDS.estudios, label: "Estudios" },
+        ],
+        ui: {
+            contactBtn: "Contáctame",
+            langToggle: "EN",
+            langToggleLabel: "View in English",
+            menuLabel: "Abrir menú",
+            downloadCv: "Descargar CV",
+            current: "Actual",
+            highlights: "Logros clave",
+            showAllTasks: "Ver todas las funciones",
+        },
+        hero: {
+            role: "Desarrollador Full Stack",
+            summary: "Tecnólogo en Análisis y Desarrollo de Sistemas con enfoque en backend y arquitectura de aplicaciones. Hoy construyo plataformas de gestión de riesgo y cumplimiento con Angular 21 y ASP.NET Core 9: integración de sistemas, seguridad, procesamiento de datos y automatización de procesos.",
+            facts: [
+                { icon: "location_on", text: "Bogotá, Colombia" },
+                { icon: "work_history", text: "Desarrollando software desde 2023" },
+                { icon: "translate", text: "Inglés B1" },
+            ],
+            photoAlt: "Foto de Juan David Ducuara",
+        },
+        experience: {
+            title: "Experiencia laboral",
+            items: [
+                {
+                    role: "Ingeniero de Desarrollo",
+                    company: "Risk Consulting",
+                    location: "Bogotá, Colombia",
+                    date: "Mar 2026 - Actualidad",
+                    current: true,
+                    highlights: [
+                        "Construí frontend y backend de una plataforma nueva con Angular 21 y ASP.NET Core 9 que reemplaza un sistema legado en PHP",
+                        "Diseñé formularios dinámicos guiados por metadata: un formulario nuevo se crea solo con datos, sin tocar código",
+                        "Cerré una vulnerabilidad IDOR implementando control de acceso por rol y por recurso",
+                        "Configuré CI/CD en Azure DevOps con versionado CalVer y promoción entre Pruebas, Preproducción y Producción",
+                    ],
+                    responsabilities: [
+                        "Desarrollo de plataformas web de gestión de riesgo y cumplimiento (KYC / SAGRILAFT / PTEE) para los sectores farmacéutico, energético, de consumo masivo e industrial",
+                        "Flujos de aprobación multi-rol (Contraparte, BPO, Compliance, Legal, Business Owner, Administrador) con máquina de estados, devoluciones, escalamiento, tareas y notificaciones",
+                        "Integración con Adobe Sign (varios firmantes y webhooks), Microsoft Entra ID / SSO, Inspektor (listas restrictivas), Cloudflare Turnstile y SMTP con plantillas editables",
+                        "Módulos de scoring y perfilamiento de riesgo y matrices de controles con cálculo de riesgo residual",
+                        "Reportería e indicadores: bitácoras, dashboards por rol y exportes a Excel y PDF con paginación del lado del servidor",
+                        "Migración de datos del sistema PHP/V1 al V2: mapeo de estados y catálogos, deduplicación de personas, firmas históricas y cargues masivos desde Excel",
+                        "Seguridad con JWT y refresh token, rate limiting, cifrado con BCrypt y auditoría de acciones",
+                        "Más de 75 migraciones de base de datos versionadas, transacciones atómicas, SOLID, Clean Architecture y conventional commits",
+                        "Soporte evolutivo y correctivo a aplicaciones heredadas en ASP.NET MVC 5 / EF6, Laravel y PHP nativo, con despliegue en IIS",
+                        "Interfaces responsive y bilingües (ES/EN) con modo oscuro, accesibilidad y tutoriales guiados",
+                    ],
+                    stack: ["Angular 21", "ASP.NET Core 9", "SQL Server", "Azure DevOps", "Entra ID", "Adobe Sign"],
+                },
+                {
+                    role: "Desarrollador Full Stack",
+                    company: "NyGSoft SAS",
+                    location: "Bogotá, Colombia",
+                    date: "Abr 2024 - Feb 2026",
+                    highlights: [
+                        "Desarrollé aplicaciones empresariales en C# / .NET con SOLID y Clean Architecture",
+                        "Implementé microservicios y APIs RESTful con middleware, versionamiento y seguridad con JWT",
+                        "Construí interfaces SPA con React (PrimeReact) y Vue (PrimeVue) integradas con APIs REST",
+                    ],
+                    responsabilities: [
+                        "Integración de APIs externas y servicios internos con patrones Repository y Unit of Work",
+                        "Bases de datos SQL Server, Oracle y MySQL: consultas optimizadas, procedimientos almacenados y Entity Framework Core",
+                        "Mantenimiento de sistemas en PHP (Laravel, CodeIgniter 4) y desarrollo de APIs RESTful en Laravel con arquitectura MVC",
+                        "Interfaces con jQuery para módulos internos",
+                        "Análisis funcional, diseño técnico, documentación y estimación de tareas en equipos multidisciplinarios",
+                    ],
+                    stack: [".NET", "C#", "React", "Vue", "Laravel", "SQL Server", "Oracle"],
+                },
+                {
+                    role: "Practicante de Desarrollo de Sistemas de Información",
+                    company: "AOA Colombia",
+                    location: "Bogotá, Colombia",
+                    date: "Ago 2023 - Feb 2024",
+                    highlights: [
+                        "Desarrollé y mantuve módulos web con PHP, JavaScript y MySQL",
+                        "Creé y consumí APIs REST para integrar sistemas",
+                    ],
+                    responsabilities: [
+                        "Diseño y estructuración de bases de datos relacionales",
+                        "Implementación de lógica de negocio y validaciones en el backend",
+                        "Pruebas funcionales y corrección de errores",
+                    ],
+                    stack: ["PHP", "JavaScript", "MySQL"],
+                },
+            ],
+        },
+        projects: {
+            title: "Proyectos destacados",
+            caseStudy: {
+                badge: "Caso de estudio · Código confidencial",
+                title: "Plataforma de gestión de riesgo y cumplimiento",
+                context: "Risk Consulting · 2026 · KYC / SAGRILAFT / PTEE",
+                problemTitle: "El reto",
+                problem: "Empresas de sectores regulados deben conocer y evaluar a sus contrapartes (clientes, proveedores, aliados). El sistema anterior en PHP era difícil de mantener: cada formulario nuevo implicaba desarrollo y los flujos de aprobación estaban acoplados al código.",
+                solutionTitle: "La solución",
+                solution: "Una plataforma nueva, construida de punta a punta, donde formularios, reglas y flujos se configuran con datos, integrada con firma electrónica, SSO corporativo y validación contra listas restrictivas.",
+                architectureTitle: "Arquitectura",
+                architecture: [
+                    { name: "Angular 21", detail: "SSR · Zoneless · Signals" },
+                    { name: "ASP.NET Core 9", detail: "API REST · Clean Architecture" },
+                    { name: "SQL Server", detail: "75+ migraciones versionadas" },
+                ],
+                integrations: ["Adobe Sign", "Microsoft Entra ID", "Inspektor", "Cloudflare Turnstile", "SMTP"],
+                decisionsTitle: "Decisiones técnicas",
+                decisions: [
+                    { title: "Formularios guiados por metadata", text: "12 tipos de campo, cascadas de catálogos, filas repetibles y un motor de reglas de visibilidad condicional." },
+                    { title: "Máquina de estados multi-rol", text: "Aprobaciones entre 6 roles con devoluciones, escalamiento a validadores, tareas y notificaciones." },
+                    { title: "Seguridad por diseño", text: "JWT con refresh token, control de acceso por rol y recurso, rate limiting, BCrypt y auditoría." },
+                    { title: "Migración sin pérdida", text: "Mapeo de estados y catálogos, deduplicación de personas y firmas históricas desde el sistema V1." },
+                ],
+                metrics: [
+                    { value: "0", label: "líneas de código para crear un formulario nuevo" },
+                    { value: "12", label: "tipos de campo dinámicos" },
+                    { value: "6", label: "roles en flujos de aprobación" },
+                    { value: "75+", label: "migraciones de base de datos" },
+                ],
+            },
+            others: {
+                title: "Proyectos en AOA Colombia",
+                description: "Participación en el análisis funcional y diseño de:",
+                items: [
+                    "Sistema de pago de beneficiarios (Defensoría del Pueblo)",
+                    "Sistema de gestión de casos para inmigrantes",
+                    "Sistema de remisiones y facturación integrado con NetSuite",
+                    "Sistema de gestión documental con flujos de aprobación",
+                    "Sistema contable con conciliación de movimientos financieros",
+                ],
+            },
+        },
+        skills: {
+            title: "Habilidades técnicas",
+            legend: "Uso diario en producción",
+            categories: [
+                {
+                    title: "Backend",
+                    icon: "./assets/images/backend.png",
+                    items: [
+                        { name: "C# / ASP.NET Core", core: true },
+                        { name: "Arquitectura en capas", core: true },
+                        { name: "ADO.NET / EF Core" },
+                        { name: "ASP.NET MVC 5" },
+                        { name: "PHP (Laravel, CodeIgniter)" },
+                        { name: "Java (Spring Boot)" },
+                    ],
+                },
+                {
+                    title: "Frontend",
+                    icon: "./assets/images/interfaz.png",
+                    items: [
+                        { name: "Angular 21 (Signals, Zoneless, SSR)", core: true },
+                        { name: "TypeScript", core: true },
+                        { name: "React (PrimeReact)" },
+                        { name: "Vue.js (PrimeVue)" },
+                        { name: "jQuery" },
+                        { name: "HTML5 / CSS3 responsive" },
+                    ],
+                },
+                {
+                    title: "Bases de datos",
+                    icon: "./assets/images/herramientas.png",
+                    items: [
+                        { name: "SQL Server", core: true },
+                        { name: "Migraciones versionadas", core: true },
+                        { name: "MySQL" },
+                        { name: "Oracle" },
+                        { name: "Consultas analíticas e indexación" },
+                    ],
+                },
+                {
+                    title: "Seguridad e integraciones",
+                    icon: "./assets/images/backend.png",
+                    items: [
+                        { name: "JWT y Refresh Tokens", core: true },
+                        { name: "SSO Entra ID (OAuth 2.0 / OIDC)", core: true },
+                        { name: "Control de acceso por rol", core: true },
+                        { name: "Adobe Sign", core: true },
+                        { name: "Rate limiting e IDOR" },
+                        { name: "SMTP transaccional" },
+                    ],
+                },
+                {
+                    title: "Arquitectura y DevOps",
+                    icon: "./assets/images/herramientas.png",
+                    items: [
+                        { name: "Diseño guiado por metadata", core: true },
+                        { name: "SOLID / Clean Architecture", core: true },
+                        { name: "Azure DevOps CI/CD", core: true },
+                        { name: "Git / GitFlow", core: true },
+                        { name: "Vitest" },
+                        { name: "Claude Code (desarrollo con IA)" },
+                    ],
+                },
+                {
+                    title: "Habilidades blandas",
+                    icon: "./assets/images/habilidades-blandas.png",
+                    items: [
+                        { name: "Análisis de causa raíz" },
+                        { name: "Trabajo en equipo" },
+                        { name: "Adaptabilidad" },
+                        { name: "Comunicación con negocio" },
+                    ],
+                },
+            ],
+        },
+        education: {
+            title: "Estudios realizados",
+            items: [
+                {
+                    title: "Tecnólogo en Análisis y Desarrollo de Sistemas de Información (ADSI)",
+                    date: "SENA · Mar 2024",
+                    responsabilities: [
+                        "Desarrollo web con PHP, Java, Node.js y C# (.NET)",
+                        "Administración de bases de datos MySQL",
+                        "Análisis de requerimientos y diseño de soluciones",
+                        "Pruebas unitarias y calidad de software",
+                    ],
+                },
+                {
+                    title: "Java y Spring Boot G6 - Oracle Next Education",
+                    date: "Alura LATAM · Dic 2024",
+                    responsabilities: [
+                        "Spring Boot 3: Developing a REST API",
+                        "Spring Boot: Data Persistence and Queries with Spring Data JPA",
+                        "Spring Boot 3: Documenting, Testing, and Preparing an API for Deployment",
+                    ],
+                },
+                {
+                    title: "Bachillerato académico",
+                    date: "I.E.D. Alfonso López Michelsen · Dic 2019",
+                    responsabilities: [],
+                },
+            ],
+        },
+        contact: {
+            title: "Contacto",
+            subtitle: "¿Tienes una vacante o un proyecto? Escríbeme.",
+            email: "Correo",
+            linkedin: "LinkedIn",
+            github: "GitHub",
+            cv: "Hoja de vida",
+            cvValue: "Descargar PDF",
+        },
+        footer: "Desarrollador Full Stack",
     },
-    {
-        title: "Sistema de gestión de casos para inmigrantes",
-        description: "Definición de requerimientos para atención y seguimiento integral de usuarios"
-    },
-    {
-        title: "Sistema de remisiones y facturación industrial (integrado con NetSuite)",
-        description: "Modelado de procesos y validación de reglas de negocio"
-    },
-    {
-        title: "Sistema de gestión documental",
-        description: "Diseño de estructura de metadatos, flujos de aprobación y políticas de almacenamiento"
-    },
-    {
-        title: "Sistema contable",
-        description: "Análisis funcional para automatización de registros contables y conciliación de movimientos financieros"
-    },
-]
 
-export const ESTUDIOS_REALIZADOS = [
-    {
-        title: "Tecnólogo en Análisis y Desarrollo de Sistemas de Información (ADSI)",
-        date: "SENA - Dic 2024",
-        responsabilities: [
-            "Desarrollo Web con PHP, Java, Node.js y C# (.NET)",
-            "Administración de bases de datos MySQL",
-            "Análisis de requerimientos y diseño de soluciones",
-            "Pruebas unitarias y calidad de software"
-        ]
+    en: {
+        nav: [
+            { href: NAV_IDS.inicio, label: "Home" },
+            { href: NAV_IDS.experiencia, label: "Experience" },
+            { href: NAV_IDS.proyectos, label: "Projects" },
+            { href: NAV_IDS.habilidades, label: "Skills" },
+            { href: NAV_IDS.estudios, label: "Education" },
+        ],
+        ui: {
+            contactBtn: "Contact me",
+            langToggle: "ES",
+            langToggleLabel: "Ver en español",
+            menuLabel: "Open menu",
+            downloadCv: "Download CV",
+            current: "Current",
+            highlights: "Key achievements",
+            showAllTasks: "See all responsibilities",
+        },
+        hero: {
+            role: "Full Stack Developer",
+            summary: "Systems Analysis and Development technologist focused on backend and application architecture. I currently build risk management and compliance platforms with Angular 21 and ASP.NET Core 9: systems integration, security, data processing and process automation.",
+            facts: [
+                { icon: "location_on", text: "Bogotá, Colombia" },
+                { icon: "work_history", text: "Building software since 2023" },
+                { icon: "translate", text: "English B1" },
+            ],
+            photoAlt: "Photo of Juan David Ducuara",
+        },
+        experience: {
+            title: "Work experience",
+            items: [
+                {
+                    role: "Software Development Engineer",
+                    company: "Risk Consulting",
+                    location: "Bogotá, Colombia",
+                    date: "Mar 2026 - Present",
+                    current: true,
+                    highlights: [
+                        "Built the frontend and backend of a new platform with Angular 21 and ASP.NET Core 9, replacing a legacy PHP system",
+                        "Designed metadata-driven dynamic forms: a new form is created with data only, without touching code",
+                        "Closed an IDOR vulnerability by implementing role- and resource-based access control",
+                        "Set up CI/CD in Azure DevOps with CalVer versioning and promotion across Test, Staging and Production",
+                    ],
+                    responsabilities: [
+                        "Development of risk management and compliance web platforms (KYC / SAGRILAFT / PTEE) for pharmaceutical, energy, consumer goods and industrial clients",
+                        "Multi-role approval workflows (Counterparty, BPO, Compliance, Legal, Business Owner, Administrator) with a state machine, returns, escalation, tasks and notifications",
+                        "Integrations with Adobe Sign (multiple signers and webhooks), Microsoft Entra ID / SSO, Inspektor (sanctions list screening), Cloudflare Turnstile and SMTP with editable templates",
+                        "Risk scoring and profiling modules and control matrices with residual risk calculation",
+                        "Reporting and KPIs: audit logs, role-based dashboards and Excel/PDF exports with server-side pagination",
+                        "Data migration from the PHP/V1 system to V2: status and catalog mapping, person deduplication, historical signatures and bulk Excel uploads",
+                        "Security with JWT and refresh tokens, rate limiting, BCrypt hashing and action auditing",
+                        "75+ versioned database migrations, atomic transactions, SOLID, Clean Architecture and conventional commits",
+                        "Maintenance and bug fixing of legacy apps in ASP.NET MVC 5 / EF6, Laravel and plain PHP, deployed on IIS",
+                        "Responsive, bilingual (ES/EN) interfaces with dark mode, accessibility and guided tutorials",
+                    ],
+                    stack: ["Angular 21", "ASP.NET Core 9", "SQL Server", "Azure DevOps", "Entra ID", "Adobe Sign"],
+                },
+                {
+                    role: "Full Stack Developer",
+                    company: "NyGSoft SAS",
+                    location: "Bogotá, Colombia",
+                    date: "Apr 2024 - Feb 2026",
+                    highlights: [
+                        "Developed enterprise applications in C# / .NET following SOLID and Clean Architecture",
+                        "Implemented microservices and RESTful APIs with middleware, versioning and JWT security",
+                        "Built SPA interfaces with React (PrimeReact) and Vue (PrimeVue) integrated with REST APIs",
+                    ],
+                    responsabilities: [
+                        "Integration of external APIs and internal services using Repository and Unit of Work patterns",
+                        "SQL Server, Oracle and MySQL databases: optimized queries, stored procedures and Entity Framework Core",
+                        "Maintenance of PHP systems (Laravel, CodeIgniter 4) and RESTful APIs in Laravel with MVC architecture",
+                        "jQuery interfaces for internal modules",
+                        "Functional analysis, technical design, documentation and task estimation in cross-functional teams",
+                    ],
+                    stack: [".NET", "C#", "React", "Vue", "Laravel", "SQL Server", "Oracle"],
+                },
+                {
+                    role: "Information Systems Development Intern",
+                    company: "AOA Colombia",
+                    location: "Bogotá, Colombia",
+                    date: "Aug 2023 - Feb 2024",
+                    highlights: [
+                        "Developed and maintained web modules with PHP, JavaScript and MySQL",
+                        "Built and consumed REST APIs to integrate systems",
+                    ],
+                    responsabilities: [
+                        "Relational database design",
+                        "Backend business logic and validations",
+                        "Functional testing and bug fixing",
+                    ],
+                    stack: ["PHP", "JavaScript", "MySQL"],
+                },
+            ],
+        },
+        projects: {
+            title: "Featured projects",
+            caseStudy: {
+                badge: "Case study · Confidential code",
+                title: "Risk management and compliance platform",
+                context: "Risk Consulting · 2026 · KYC / SAGRILAFT / PTEE",
+                problemTitle: "The challenge",
+                problem: "Companies in regulated industries must know and assess their counterparties (clients, suppliers, partners). The previous PHP system was hard to maintain: every new form required development work and approval workflows were coupled to the code.",
+                solutionTitle: "The solution",
+                solution: "A new platform, built end to end, where forms, rules and workflows are configured with data, integrated with e-signature, corporate SSO and sanctions list screening.",
+                architectureTitle: "Architecture",
+                architecture: [
+                    { name: "Angular 21", detail: "SSR · Zoneless · Signals" },
+                    { name: "ASP.NET Core 9", detail: "REST API · Clean Architecture" },
+                    { name: "SQL Server", detail: "75+ versioned migrations" },
+                ],
+                integrations: ["Adobe Sign", "Microsoft Entra ID", "Inspektor", "Cloudflare Turnstile", "SMTP"],
+                decisionsTitle: "Technical decisions",
+                decisions: [
+                    { title: "Metadata-driven forms", text: "12 field types, cascading catalogs, repeatable rows and a conditional visibility rules engine." },
+                    { title: "Multi-role state machine", text: "Approvals across 6 roles with returns, escalation to validators, tasks and notifications." },
+                    { title: "Security by design", text: "JWT with refresh tokens, role- and resource-based access control, rate limiting, BCrypt and auditing." },
+                    { title: "Lossless migration", text: "Status and catalog mapping, person deduplication and historical signatures from the V1 system." },
+                ],
+                metrics: [
+                    { value: "0", label: "lines of code to create a new form" },
+                    { value: "12", label: "dynamic field types" },
+                    { value: "6", label: "roles in approval workflows" },
+                    { value: "75+", label: "database migrations" },
+                ],
+            },
+            others: {
+                title: "Projects at AOA Colombia",
+                description: "Functional analysis and design of:",
+                items: [
+                    "Beneficiary payment system (Colombian Ombudsman's Office)",
+                    "Case management system for immigrants",
+                    "Industrial delivery notes and billing system integrated with NetSuite",
+                    "Document management system with approval workflows",
+                    "Accounting system with financial reconciliation",
+                ],
+            },
+        },
+        skills: {
+            title: "Technical skills",
+            legend: "Daily use in production",
+            categories: [
+                {
+                    title: "Backend",
+                    icon: "./assets/images/backend.png",
+                    items: [
+                        { name: "C# / ASP.NET Core", core: true },
+                        { name: "Layered architecture", core: true },
+                        { name: "ADO.NET / EF Core" },
+                        { name: "ASP.NET MVC 5" },
+                        { name: "PHP (Laravel, CodeIgniter)" },
+                        { name: "Java (Spring Boot)" },
+                    ],
+                },
+                {
+                    title: "Frontend",
+                    icon: "./assets/images/interfaz.png",
+                    items: [
+                        { name: "Angular 21 (Signals, Zoneless, SSR)", core: true },
+                        { name: "TypeScript", core: true },
+                        { name: "React (PrimeReact)" },
+                        { name: "Vue.js (PrimeVue)" },
+                        { name: "jQuery" },
+                        { name: "Responsive HTML5 / CSS3" },
+                    ],
+                },
+                {
+                    title: "Databases",
+                    icon: "./assets/images/herramientas.png",
+                    items: [
+                        { name: "SQL Server", core: true },
+                        { name: "Versioned migrations", core: true },
+                        { name: "MySQL" },
+                        { name: "Oracle" },
+                        { name: "Analytical queries and indexing" },
+                    ],
+                },
+                {
+                    title: "Security & integrations",
+                    icon: "./assets/images/backend.png",
+                    items: [
+                        { name: "JWT & Refresh Tokens", core: true },
+                        { name: "Entra ID SSO (OAuth 2.0 / OIDC)", core: true },
+                        { name: "Role-based access control", core: true },
+                        { name: "Adobe Sign", core: true },
+                        { name: "Rate limiting & IDOR" },
+                        { name: "Transactional SMTP" },
+                    ],
+                },
+                {
+                    title: "Architecture & DevOps",
+                    icon: "./assets/images/herramientas.png",
+                    items: [
+                        { name: "Metadata-driven design", core: true },
+                        { name: "SOLID / Clean Architecture", core: true },
+                        { name: "Azure DevOps CI/CD", core: true },
+                        { name: "Git / GitFlow", core: true },
+                        { name: "Vitest" },
+                        { name: "Claude Code (AI-assisted dev)" },
+                    ],
+                },
+                {
+                    title: "Soft skills",
+                    icon: "./assets/images/habilidades-blandas.png",
+                    items: [
+                        { name: "Root cause analysis" },
+                        { name: "Teamwork" },
+                        { name: "Adaptability" },
+                        { name: "Business communication" },
+                    ],
+                },
+            ],
+        },
+        education: {
+            title: "Education",
+            items: [
+                {
+                    title: "Technologist in Information Systems Analysis and Development (ADSI)",
+                    date: "SENA · Mar 2024",
+                    responsabilities: [
+                        "Web development with PHP, Java, Node.js and C# (.NET)",
+                        "MySQL database administration",
+                        "Requirements analysis and solution design",
+                        "Unit testing and software quality",
+                    ],
+                },
+                {
+                    title: "Java and Spring Boot G6 - Oracle Next Education",
+                    date: "Alura LATAM · Dec 2024",
+                    responsabilities: [
+                        "Spring Boot 3: Developing a REST API",
+                        "Spring Boot: Data Persistence and Queries with Spring Data JPA",
+                        "Spring Boot 3: Documenting, Testing, and Preparing an API for Deployment",
+                    ],
+                },
+                {
+                    title: "High school diploma",
+                    date: "I.E.D. Alfonso López Michelsen · Dec 2019",
+                    responsabilities: [],
+                },
+            ],
+        },
+        contact: {
+            title: "Contact",
+            subtitle: "Have an opening or a project? Get in touch.",
+            email: "Email",
+            linkedin: "LinkedIn",
+            github: "GitHub",
+            cv: "Resume",
+            cvValue: "Download PDF",
+        },
+        footer: "Full Stack Developer",
     },
-    {
-        title: "Java y Spring Boot G6 - Oracle Next Education",
-        date: "Alura LATAM - Dic 2024",
-        responsabilities: [
-            "Spring Boot 3: desarrollar una API Rest en Java",
-            "Spring Boot: persistencia de datos y consultas con Spring Data JPA",
-            "Spring Boot 3: documentar, probar y preparar una API para su implementación"
-        ]
-    },
-    {
-        title: "Bachillerato Académico",
-        date: "Alfonso López Michelsen (I.E.D) - Dic 2019",
-        responsabilities: []
-    },
-]
+}

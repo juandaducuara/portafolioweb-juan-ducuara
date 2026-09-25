@@ -3,9 +3,7 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     padding: 1.8rem;
-    margin: 0 0.75rem;
     transition: var(--transition-normal);
-    height: 100%;
 }
 
 .work-experience-card:hover {
@@ -13,40 +11,80 @@
     box-shadow: var(--shadow-md);
 }
 
-.work-experience-card h6 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    color: var(--text-primary);
-    line-height: 1.4;
-}
-
-.work-duration {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--accent-secondary);
-    background: rgba(59, 130, 246, 0.15);
-    border-radius: var(--radius-sm);
-    padding: 0.4rem 0.8rem;
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin-bottom: 1.2rem;
 }
 
-.work-experience-card ul {
-    padding-left: 1.2rem;
+.work-experience-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
 }
 
-.work-experience-card ul li {
+.work-company {
+    font-size: 0.95rem;
+    color: var(--accent-secondary);
+    font-weight: 500;
+    margin: 0;
+}
+
+.work-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.work-duration,
+.work-current {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.8rem;
+}
+
+.work-duration {
+    color: var(--accent-secondary);
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.work-current {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.12);
+}
+
+.work-experience-card h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.work-experience-card ul:not(.chip-list) {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.work-experience-card ul:not(.chip-list) li {
     list-style: none;
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 0.6rem;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
-.work-experience-card ul li::before {
+.work-experience-card ul:not(.chip-list) li::before {
     content: "";
     width: 6px;
     height: 6px;
@@ -54,18 +92,42 @@
     border-radius: 50%;
     position: absolute;
     left: -1.2rem;
-    top: 0.5rem;
+    top: 0.55rem;
+}
+
+.work-highlights li {
+    color: var(--text-primary) !important;
+}
+
+.work-details {
+    margin-bottom: 1.2rem;
+}
+
+.work-details summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-secondary);
+    margin-bottom: 0.8rem;
+    width: fit-content;
+}
+
+.work-details summary:hover {
+    color: var(--text-primary);
+}
+
+.work-details ul li::before {
+    background: var(--border-light) !important;
 }
 
 @media (max-width: 768px) {
     .work-experience-card {
-        margin: 0;
-        padding: 1.5rem;
+        padding: 1.3rem;
     }
-    .work-experience-card h6 {
-        font-size: 1rem;
+    .work-experience-card h3 {
+        font-size: 1.05rem;
     }
-    .work-experience-card ul li {
-        font-size: 0.8rem;
+    .work-experience-card ul:not(.chip-list) li {
+        font-size: 0.85rem;
     }
 }

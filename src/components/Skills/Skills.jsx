@@ -1,42 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Skills.css'
-import { SKILLS } from '../../utils/data'
 import SkillCard from './SkillCard/SkillCard'
-import SkillInfoCard from './SkillInfoCard/SkillInfoCard'
+import { useLanguage } from '../../context/LanguageContext'
 
 const Skills = () => {
+  const { t } = useLanguage();
 
-    const [selectedSkill,setSelectedSkill] = useState(SKILLS[0]);
-
-    const handleSelectSkill = (data) => {
-      setSelectedSkill(data);
-    };
   return (
-    <section className="skills-container" id="seccionHabilidades">
-      <h5>Competencias tecnicas</h5>
-      <div className="skills-content">
-        <div className="skills">
-          {SKILLS.map ((item)=>(
-            <SkillCard
-              key={item.title}
-              iconUrl={item.icon}
-              title={item.title}
-              isActive={selectedSkill.title === item.title}
-              onClick={()=>{
-                  handleSelectSkill(item);
-                }
-                
-              }
-            />
-          ))}
-        </div>
-        <div className="skills-info">
-            <SkillInfoCard
-              heading={selectedSkill.title}
-              skills={selectedSkill.skills}              
-              />
-
-        </div>
+    <section className="section skills-container" id="seccionHabilidades">
+      <div className="skills-header">
+        <h2 className="section-heading">{t.skills.title}</h2>
+        <p className="skills-legend">
+          <span className="legend-swatch" aria-hidden="true" />
+          {t.skills.legend}
+        </p>
+      </div>
+      <div className="skills-grid">
+        {t.skills.categories.map((category) => (
+          <SkillCard
+            key={category.title}
+            title={category.title}
+            iconUrl={category.icon}
+            items={category.items}
+          />
+        ))}
       </div>
     </section>
   )
